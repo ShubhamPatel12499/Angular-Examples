@@ -1,0 +1,11 @@
+<h3>Cart</h3>
+<ul>
+  <li *ngFor="let item of cartItems">{{ item }}</li>
+</ul>
+<button (click)="addToCart()">Add to Cart</button>
+<hr/>
+<button (click)="removeItemFromCart('Product')">Remove Item</button>
+<hr/>
+<button (click)="clearCart()">Clear Cart</button>
+
+
