@@ -1,0 +1,94 @@
+h1{
+  text-align: center;
+}
+
+h2{
+  text-align: center;
+}
+
+.form{
+  margin:auto; 
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding:3%; 
+  border-radius: 20px;
+  width:30%;
+}
+.form div{
+  margin: auto;
+  display:flex;
+  flex-direction: column;
+}
+
+.form input{
+  margin-top: 10px;
+}
+
+.form label{
+  margin-top: 10px;
+}
+
+.form button{
+   margin: auto;
+   font-size: 18px;
+   padding:5px;
+   margin: 10px auto auto auto;
+   border-radius: 8px;
+   border:none;
+}
+
+.form button:hover{
+ background-color: black;
+ color:white;
+ cursor: pointer;
+}
+
+table{
+  margin-top:25px;
+  margin: auto;
+  border:1px solid black;
+  width:80%;
+}
+
+thead{
+  background-color:red.100;
+  margin: auto;
+}
+
+#thead th{
+  background-color:red.100;
+   border:1px solid black;
+   text-align: center;
+}
+
+tbody{
+  background-color:blue.100;
+  margin: auto;
+}
+#tbody tr{
+  border:1px solid black;
+}
+
+#tbody td{
+  background-color:red.100;
+   text-align: center;
+}
+
+#abutton{
+  display: flex;
+  gap:30px;
+  margin-top:17px;
+  margin-left: 20px;
+}
+
+#abutton button{
+  font-size: 16px;
+  padding:5px;
+  border-radius: 5px;
+  border:none;
+}
+
+#abutton button:hover{
+  background-color: black;
+  color:white;
+  cursor: pointer;
+}

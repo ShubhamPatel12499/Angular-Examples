@@ -1,0 +1,79 @@
+<h1>User List</h1>
+<table >
+  <thead  id="thead">
+    <tr>
+      <th>ID</th>
+      <th>Profile</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Mobile</th>
+      <th>Address</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody id="tbody">
+    <tr *ngFor="let user of users">
+      <td>{{ user._id }}</td>
+      <td><img src= "{{ user.profilePic }}"  alt="avatar" width="30%" height="30%" margin="auto"/></td>
+      <td>{{ user.userName }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.mobileNo }}</td>
+      <td>{{ user.address }}</td>
+      <td id="abutton">
+        <button (click)="editUser(user)">Edit</button>
+        <button (click)="deleteUser(user._id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Create User</h2>
+<form *ngIf="!editingUser" (submit)="createUser()" class="form">
+  <div>
+    <label for="userName">Username:</label>
+    <input type="text" id="userName" [(ngModel)]="newUser.userName" name="userName" required>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" [(ngModel)]="newUser.email" name="email" required>
+  </div>
+  <div>
+    <label for="mobileNo">Mobile Number:</label>
+    <input type="text" id="mobileNo" [(ngModel)]="newUser.mobileNo" name="mobileNo" required>
+  </div>
+  <div>
+    <label for="address">Address:</label>
+    <input type="text" id="address" [(ngModel)]="newUser.address" name="address" required>
+  </div>
+  <div>
+    <label for="profile">Profile:</label>
+    <input type="text" id="profile" [(ngModel)]="newUser.profilePic" name="profile" required>
+  </div>
+  <button type="submit">Create</button>
+</form>
+
+<h2>Edit User</h2>
+<form *ngIf="editingUser" (submit)="updateUser()"  class="form">
+  <div>
+    <label for="userName">Username:</label>
+    <input type="text" id="userName" [(ngModel)]="editingUser.userName" name="userName" required>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" [(ngModel)]="editingUser.email" name="email" required>
+  </div>
+  <div>
+    <label for="mobileNo">Mobile Number:</label>
+    <input type="text" id="mobileNo" [(ngModel)]="editingUser.mobileNo" name="mobileNo" required>
+  </div>
+  <div>
+    <label for="address">Address:</label>
+    <input type="text" id="address" [(ngModel)]="editingUser.address" name="address" required>
+  </div>
+  <div>
+    <label for="profile">Profile:</label>
+    <input type="text" id="profile" [(ngModel)]="editingUser.profilePic" name="profile" required>
+  </div>
+  <button type="submit">Update</button>
+  <button (click)="cancelEdit()">Cancel</button>
+</form>
